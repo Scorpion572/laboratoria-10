@@ -30,12 +30,17 @@ void insertNode(int key, string data) {
 		lastAded = newNode;
     }
 }
-    
+void deleteNode(int numer) {
+
+}
+
 void displayList() {
     Node* temp = head;
+	int count = 1;
     while (temp != nullptr) {
-        cout << "Key: " << temp->key << ", Data: " << temp->data << endl;
+        cout << count << "\t" << "Key: " << temp->key << ", Data: " << temp->data << endl;
         temp = temp->next;
+		count++;
     }
 }
 
@@ -73,9 +78,13 @@ int main() {
             cout << "The entire list:" << endl;
             displayList();
             system("pause");
+            break;
 		case '9':
 			cout << "wylaczanie programu..." << endl;
 			aktywny = false;
+            break;
+        deafult :
+			"nie ma takiej opcji";
             break;
         }
 
