@@ -48,34 +48,49 @@ void wyswielmenu() {
 }
 
 int main() {
-	bool aktywny = true;
-    int n, key;
+    bool aktywny = true;
+    int key;
     string data;
-    cout << "Enter the number of nodes: ";
-    cin >> n;
-    while (aktywny==true){
-		system("cls");
+    while (aktywny == true) {
+        system("cls");
         wyswielmenu();
-		char wybor;
-		cout << "Wybierz opcje: ";
-		cin >> wybor;
-		switch (wybor) {
+        char wybor;
+        cout << "Wybierz opcje: ";
+        cin >> wybor;
+        switch (wybor) {
         case '1':
+            cout << "Enter key and data for node " << endl;
+            cout << "Please write integer number: ";
+            cin >> key;
+            cout << "Please write any string: ";
+            cin >> data;
+            insertNode(key, data);
+            break;
+        case '2':
 
+            break;
+        case '3':
+            cout << "The entire list:" << endl;
+            displayList();
+            system("pause");
+		case '9':
+			cout << "wylaczanie programu..." << endl;
+			aktywny = false;
+            break;
+        }
+
+
+
+        /*for (int i = 0; i < n; i++) {
+            cout << "Enter key and data for node " << i + 1 << ": " << endl;
+            cout << "Please write integer number: ";
+            cin >> key;
+            cout << "Please write any string: ";
+            cin >> data;
+            insertNode(key, data);
+        }
+
+        cout << "The entire list:" << endl;
+        displayList();*/
     }
-    
-
-  
-    /*for (int i = 0; i < n; i++) {
-        cout << "Enter key and data for node " << i + 1 << ": " << endl;
-        cout << "Please write integer number: ";
-        cin >> key;
-        cout << "Please write any string: ";
-        cin >> data;
-        insertNode(key, data);
-    }
-
-    cout << "The entire list:" << endl;
-    displayList();*/
 }
-
